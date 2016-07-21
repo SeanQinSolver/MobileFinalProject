@@ -23,6 +23,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     //ASDASDJASD;ASKD;ASK;
+    
+    //start 
 }
 
 @end
