@@ -4,9 +4,13 @@
 //
 //  Created by QinShawn on 7/21/16.
 //  Copyright © 2016 Team1. All rights reserved.
-//
+//  Ref:http://stackoverflow.com/questions/19962276/best-practices-for-storyboard-login-screen-handling-clearing-of-data-upon-logou
+//  Ref to learn show login screen before tab bar
 
 #import "AppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
+#import "LogInViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +21,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Fabric with:@[[Twitter class]]];
+    
+    TWTRSession *session;
+    if (session == nil) {
+        [self showLoginScreen:NO];
+    }
     return YES;
 }
+
+-(void) showLoginScreen:(BOOL)animated
+{
+    
+    // Get login screen from storyboard and present it
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LogInViewController *viewController = (LogInViewController *)[storyboard instantiateViewControllerWithIdentifier:@"loginScreen"];
+    [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:viewController
+                                                 animated:animated
+                                               completion:nil];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
