@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Running Recipe";
+    
     // Do any additional setup after loading the view.
     TWTRAPIClient *client = [[TWTRAPIClient alloc] init];
     self.dataSource = [[TWTRUserTimelineDataSource alloc] initWithScreenName:@"runnersworld" APIClient:client];
@@ -24,6 +26,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//Change color of cell
+-(void)tableView:(UITableView *)tableView willDisplayCell:(TWTRTweetTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [UIColor blackColor];
+    cell.tweetView.backgroundColor = [UIColor yellowColor];
+    // Do what you want with your 'tweetView' object
 }
 
 /*

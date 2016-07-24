@@ -21,6 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window.backgroundColor = [UIColor redColor];
+    
     [Fabric with:@[[Twitter class]]];
     
     TWTRSession *session;
