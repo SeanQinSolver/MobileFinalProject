@@ -23,6 +23,8 @@
 		FB9E91851D41C6A500BF9B7F /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91841D41C6A500BF9B7F /* LogInViewController.m */; };
 		FB9E91881D42BA2900BF9B7F /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91871D42BA2900BF9B7F /* LogOutViewController.m */; };
 		FB9E918B1D43C60C00BF9B7F /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E918A1D43C60C00BF9B7F /* TimelineViewController.m */; };
+		FB9E91901D444B3C00BF9B7F /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E918F1D444B3C00BF9B7F /* FinishViewController.m */; };
+		FB9E91941D44522600BF9B7F /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		FB9E91871D42BA2900BF9B7F /* LogOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
 		FB9E91891D43C60C00BF9B7F /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		FB9E918A1D43C60C00BF9B7F /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		FB9E918E1D444B3C00BF9B7F /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
+		FB9E918F1D444B3C00BF9B7F /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
+		FB9E91921D44522600BF9B7F /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
+		FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,10 @@
 				FB9E91871D42BA2900BF9B7F /* LogOutViewController.m */,
 				FB9E91891D43C60C00BF9B7F /* TimelineViewController.h */,
 				FB9E918A1D43C60C00BF9B7F /* TimelineViewController.m */,
+				FB9E918E1D444B3C00BF9B7F /* FinishViewController.h */,
+				FB9E918F1D444B3C00BF9B7F /* FinishViewController.m */,
+				FB9E91921D44522600BF9B7F /* HistoryTableViewController.h */,
+				FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -345,7 +355,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9E91941D44522600BF9B7F /* HistoryTableViewController.m in Sources */,
 				FB9E91881D42BA2900BF9B7F /* LogOutViewController.m in Sources */,
+				FB9E91901D444B3C00BF9B7F /* FinishViewController.m in Sources */,
 				FB9E918B1D43C60C00BF9B7F /* TimelineViewController.m in Sources */,
 				14FEFFB41D414C1600F499AC /* ViewController.m in Sources */,
 				14FEFFB11D414C1600F499AC /* AppDelegate.m in Sources */,

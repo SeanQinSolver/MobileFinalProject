@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
     self.title = @"Running Recipe";
     
     // Do any additional setup after loading the view.
@@ -30,8 +31,10 @@
 
 //Change color of cell
 -(void)tableView:(UITableView *)tableView willDisplayCell:(TWTRTweetTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.backgroundColor = [UIColor blackColor];
-    cell.tweetView.backgroundColor = [UIColor yellowColor];
+    //cell.backgroundColor = [UIColor blackColor];
+    cell.tweetView.backgroundColor = [UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1];
+    
+
     // Do what you want with your 'tweetView' object
 }
 
