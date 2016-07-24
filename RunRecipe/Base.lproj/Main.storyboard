@@ -288,10 +288,12 @@
         <scene sceneID="8m4-ew-moB">
             <objects>
                 <tabBarController id="Faa-Yn-Rfy" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="98j-nw-IM2">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="98j-nw-IM2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="OXV-Lk-4Cl" kind="relationship" relationship="viewControllers" id="Nao-SL-cEv"/>

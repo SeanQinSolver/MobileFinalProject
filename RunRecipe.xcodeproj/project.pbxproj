@@ -76,6 +76,7 @@
 		FB9E918F1D444B3C00BF9B7F /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
 		FB9E91921D44522600BF9B7F /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		FB9E91951D4514C700BF9B7F /* 08723M.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; name = 08723M.mobileprovision; path = ../../../Desktop/08723/08723M.mobileprovision; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 		14FEFFA01D414C1600F499AC = {
 			isa = PBXGroup;
 			children = (
+				FB9E91951D4514C700BF9B7F /* 08723M.mobileprovision */,
 				14FEFFAB1D414C1600F499AC /* RunRecipe */,
 				14FEFFC81D414C1600F499AC /* RunRecipeTests */,
 				14FEFFD31D414C1600F499AC /* RunRecipeUITests */,
