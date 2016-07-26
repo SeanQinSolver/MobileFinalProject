@@ -1,7 +1,7 @@
 //
 //  LogInViewController.m
 //  RunRecipe
-//
+//  Ref:https://docs.fabric.io/apple/twitter/log-in-with-twitter.html
 //  Created by Chuanyu Chen on 7/21/16.
 //  Copyright © 2016 Team1. All rights reserved.
 //
