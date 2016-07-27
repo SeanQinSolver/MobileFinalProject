@@ -26,6 +26,9 @@
 		FB9E91941D44522600BF9B7F /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */; };
 		FB9E91971D45A37B00BF9B7F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E91961D45A37B00BF9B7F /* libsqlite3.tbd */; };
 		FB9E919C1D45A47400BF9B7F /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E919B1D45A47400BF9B7F /* DBManager.m */; };
+		FB9E919E1D47B40200BF9B7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E919D1D47B40200BF9B7F /* CoreData.framework */; };
+		FB9E91A61D47EA7900BF9B7F /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91A51D47EA7900BF9B7F /* SummaryViewController.m */; };
+		FB9E91AA1D47F29000BF9B7F /* OAuthiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E91A91D47F29000BF9B7F /* OAuthiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,11 @@
 		FB9E91961D45A37B00BF9B7F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FB9E919A1D45A47400BF9B7F /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		FB9E919B1D45A47400BF9B7F /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		FB9E919D1D47B40200BF9B7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FB9E91A41D47EA7900BF9B7F /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
+		FB9E91A51D47EA7900BF9B7F /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		FB9E91A91D47F29000BF9B7F /* OAuthiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OAuthiOS.framework; sourceTree = "<group>"; };
+		FB9E91AB1D47F32300BF9B7F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +94,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9E919E1D47B40200BF9B7F /* CoreData.framework in Frameworks */,
 				FB9E91971D45A37B00BF9B7F /* libsqlite3.tbd in Frameworks */,
 				FB9E917E1D41B88D00BF9B7F /* Fabric.framework in Frameworks */,
 				FB9E91811D41B88D00BF9B7F /* TwitterCore.framework in Frameworks */,
+				FB9E91AA1D47F29000BF9B7F /* OAuthiOS.framework in Frameworks */,
 				FB9E917F1D41B88D00BF9B7F /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,7 +153,6 @@
 				14FEFFBB1D414C1600F499AC /* Assets.xcassets */,
 				14FEFFBD1D414C1600F499AC /* LaunchScreen.storyboard */,
 				14FEFFC01D414C1600F499AC /* Info.plist */,
-				14FEFFB81D414C1600F499AC /* RunRecipe.xcdatamodeld */,
 				14FEFFAC1D414C1600F499AC /* Supporting Files */,
 			);
 			path = RunRecipe;
@@ -152,6 +161,8 @@
 		14FEFFAC1D414C1600F499AC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FB9E91A91D47F29000BF9B7F /* OAuthiOS.framework */,
+				FB9E919D1D47B40200BF9B7F /* CoreData.framework */,
 				FB9E917A1D41B88D00BF9B7F /* Fabric.framework */,
 				FB9E917B1D41B88D00BF9B7F /* TwitterKit.framework */,
 				FB9E917C1D41B88D00BF9B7F /* TwitterKitResources.bundle */,
@@ -182,6 +193,7 @@
 		FB9E91721D41633A00BF9B7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14FEFFB81D414C1600F499AC /* RunRecipe.xcdatamodeld */,
 				FB9E919A1D45A47400BF9B7F /* DBManager.h */,
 				FB9E919B1D45A47400BF9B7F /* DBManager.m */,
 			);
@@ -199,6 +211,7 @@
 		FB9E91741D41634600BF9B7F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FB9E91AB1D47F32300BF9B7F /* Constants.h */,
 				FB9E91831D41C6A500BF9B7F /* LogInViewController.h */,
 				FB9E91841D41C6A500BF9B7F /* LogInViewController.m */,
 				FB9E91861D42BA2900BF9B7F /* LogOutViewController.h */,
@@ -209,6 +222,8 @@
 				FB9E918F1D444B3C00BF9B7F /* FinishViewController.m */,
 				FB9E91921D44522600BF9B7F /* HistoryTableViewController.h */,
 				FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */,
+				FB9E91A41D47EA7900BF9B7F /* SummaryViewController.h */,
+				FB9E91A51D47EA7900BF9B7F /* SummaryViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -364,6 +379,7 @@
 				FB9E91941D44522600BF9B7F /* HistoryTableViewController.m in Sources */,
 				FB9E91881D42BA2900BF9B7F /* LogOutViewController.m in Sources */,
 				FB9E91901D444B3C00BF9B7F /* FinishViewController.m in Sources */,
+				FB9E91A61D47EA7900BF9B7F /* SummaryViewController.m in Sources */,
 				FB9E919C1D45A47400BF9B7F /* DBManager.m in Sources */,
 				FB9E918B1D43C60C00BF9B7F /* TimelineViewController.m in Sources */,
 				14FEFFB11D414C1600F499AC /* AppDelegate.m in Sources */,
@@ -513,6 +529,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/RunRecipe",
 				);
 				INFOPLIST_FILE = RunRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -528,6 +545,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/RunRecipe",
 				);
 				INFOPLIST_FILE = RunRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

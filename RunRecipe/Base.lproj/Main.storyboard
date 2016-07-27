@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -240,6 +241,130 @@
             </objects>
             <point key="canvasLocation" x="1406.25" y="776.40845070422529"/>
         </scene>
+        <!--Summary-->
+        <scene sceneID="1La-lI-daQ">
+            <objects>
+                <viewController id="h5N-La-8mJ" customClass="SummaryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L5i-LX-W9Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="07D-mX-BTh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8BT-h8-VL3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poc-hc-dAG">
+                                <rect key="frame" x="208" y="98" width="118" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="TLy-aI-8Tu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <state key="normal" title="fitbit Log in"/>
+                                <connections>
+                                    <action selector="btnLogin:" destination="h5N-La-8mJ" eventType="touchUpInside" id="hE7-X5-eUR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5J-pJ-4gI">
+                                <rect key="frame" x="150" y="-29" width="300" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Rd1-Q8-5rw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fitbit_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3I6-Tk-qzR">
+                                <rect key="frame" x="150" y="86" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="uRh-9b-Y0b"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpW-i7-pgp">
+                                <rect key="frame" x="20" y="214" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vmQ-w5-s9g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-PM-DD3">
+                                <rect key="frame" x="20" y="278" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="R69-yv-zuA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekp-sg-Gch">
+                                <rect key="frame" x="20" y="401" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eNZ-gn-Gcl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OX-NR-23h">
+                                <rect key="frame" x="20" y="339" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Wff-AT-fwr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click above to log in!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usJ-Nr-qZK">
+                                <rect key="frame" x="208" y="158" width="560" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="eNS-cN-2fg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L5J-pJ-4gI" firstAttribute="top" secondItem="8BT-h8-VL3" secondAttribute="topMargin" constant="-29" id="0nn-fD-VGm"/>
+                            <constraint firstItem="QpW-i7-pgp" firstAttribute="trailing" secondItem="FUY-PM-DD3" secondAttribute="trailing" id="3zL-nT-OuA"/>
+                            <constraint firstItem="QpW-i7-pgp" firstAttribute="leading" secondItem="FUY-PM-DD3" secondAttribute="leading" id="50o-Ks-bQH"/>
+                            <constraint firstItem="usJ-Nr-qZK" firstAttribute="top" secondItem="poc-hc-dAG" secondAttribute="bottom" constant="34" id="5X6-Wy-SjN"/>
+                            <constraint firstItem="3I6-Tk-qzR" firstAttribute="centerY" secondItem="poc-hc-dAG" secondAttribute="centerY" id="7qw-dA-mup"/>
+                            <constraint firstItem="poc-hc-dAG" firstAttribute="leading" secondItem="usJ-Nr-qZK" secondAttribute="leading" id="7yT-MF-B2y"/>
+                            <constraint firstItem="L5J-pJ-4gI" firstAttribute="centerX" secondItem="QpW-i7-pgp" secondAttribute="centerX" id="Bnf-L5-mnD"/>
+                            <constraint firstItem="usJ-Nr-qZK" firstAttribute="top" secondItem="L5J-pJ-4gI" secondAttribute="bottom" constant="39" id="IXc-sP-yhR"/>
+                            <constraint firstItem="2OX-NR-23h" firstAttribute="trailing" secondItem="Ekp-sg-Gch" secondAttribute="trailing" id="LUD-tG-VH9"/>
+                            <constraint firstItem="FUY-PM-DD3" firstAttribute="trailing" secondItem="2OX-NR-23h" secondAttribute="trailing" id="MEh-6m-e11"/>
+                            <constraint firstItem="QpW-i7-pgp" firstAttribute="top" secondItem="3I6-Tk-qzR" secondAttribute="bottom" constant="78" id="OIw-E1-OIW"/>
+                            <constraint firstItem="2OX-NR-23h" firstAttribute="leading" secondItem="Ekp-sg-Gch" secondAttribute="leading" id="QuD-4M-YAj"/>
+                            <constraint firstItem="2OX-NR-23h" firstAttribute="top" secondItem="FUY-PM-DD3" secondAttribute="bottom" constant="40" id="TgF-aW-mbu"/>
+                            <constraint firstItem="poc-hc-dAG" firstAttribute="leading" secondItem="3I6-Tk-qzR" secondAttribute="trailing" constant="8" symbolic="YES" id="XCT-bz-s89"/>
+                            <constraint firstItem="poc-hc-dAG" firstAttribute="top" secondItem="L5i-LX-W9Q" secondAttribute="bottom" constant="78" id="aEQ-TL-V8z"/>
+                            <constraint firstItem="L5J-pJ-4gI" firstAttribute="leading" secondItem="3I6-Tk-qzR" secondAttribute="leading" id="dEh-AO-p90"/>
+                            <constraint firstItem="Ekp-sg-Gch" firstAttribute="top" secondItem="2OX-NR-23h" secondAttribute="bottom" constant="41" id="lMc-Xw-wBG"/>
+                            <constraint firstItem="QpW-i7-pgp" firstAttribute="leading" secondItem="8BT-h8-VL3" secondAttribute="leadingMargin" id="mCT-l9-jHp"/>
+                            <constraint firstItem="07D-mX-BTh" firstAttribute="top" secondItem="Ekp-sg-Gch" secondAttribute="bottom" constant="129" id="nfI-WC-tcV"/>
+                            <constraint firstItem="FUY-PM-DD3" firstAttribute="leading" secondItem="2OX-NR-23h" secondAttribute="leading" id="qDk-SG-g9I"/>
+                            <constraint firstItem="3I6-Tk-qzR" firstAttribute="top" secondItem="L5i-LX-W9Q" secondAttribute="bottom" constant="66" id="tkE-3G-neC"/>
+                            <constraint firstItem="QpW-i7-pgp" firstAttribute="trailing" secondItem="8BT-h8-VL3" secondAttribute="trailingMargin" id="uYh-P1-a2O"/>
+                            <constraint firstItem="FUY-PM-DD3" firstAttribute="top" secondItem="QpW-i7-pgp" secondAttribute="bottom" constant="43" id="we6-g9-yUa"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Summary" id="g48-GV-T8T"/>
+                    <connections>
+                        <outlet property="lblCal" destination="2OX-NR-23h" id="TSV-fi-E4Y"/>
+                        <outlet property="lblDistance" destination="QpW-i7-pgp" id="Ea5-Ls-ACn"/>
+                        <outlet property="lblHeartRate" destination="Ekp-sg-Gch" id="nHn-w6-T3o"/>
+                        <outlet property="lblName" destination="usJ-Nr-qZK" id="jcF-bF-PPd"/>
+                        <outlet property="lblSteps" destination="FUY-PM-DD3" id="OFK-E8-ce0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iv6-yZ-7h3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="1552"/>
+        </scene>
         <!--Log In View Controller-->
         <scene sceneID="H6q-Ir-NWY">
             <objects>
@@ -299,6 +424,7 @@
                         <segue destination="OXV-Lk-4Cl" kind="relationship" relationship="viewControllers" id="Nao-SL-cEv"/>
                         <segue destination="rx4-hl-JHY" kind="relationship" relationship="viewControllers" id="CyG-wg-tvd"/>
                         <segue destination="iKp-eQ-RAb" kind="relationship" relationship="viewControllers" id="3fp-H8-7te"/>
+                        <segue destination="h5N-La-8mJ" kind="relationship" relationship="viewControllers" id="1Z4-tz-rWr"/>
                         <segue destination="bOi-Xo-MLf" kind="relationship" relationship="viewControllers" id="nAR-D1-3EN"/>
                     </connections>
                 </tabBarController>
@@ -356,6 +482,7 @@
     <resources>
         <image name="btnFinish" width="100" height="100"/>
         <image name="btnStart" width="96" height="96"/>
+        <image name="fitbit_icon" width="300" height="300"/>
         <image name="running" width="1200" height="1200"/>
     </resources>
 </document>
