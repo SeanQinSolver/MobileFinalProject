@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StartRunViewController.h"
+#import "HistoryDetailsViewController.h"
 
 @interface HistoryTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray<Run *> *historyRecords;
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

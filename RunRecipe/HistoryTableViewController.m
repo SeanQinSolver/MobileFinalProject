@@ -8,7 +8,9 @@
 
 #import "HistoryTableViewController.h"
 
-@interface HistoryTableViewController ()
+@interface HistoryTableViewController () {
+    Run *currentRunObject;
+}
 
 @end
 
@@ -23,6 +25,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+//    NSLog(@"Record size: %lu", (unsigned long)_historyRecords.count);
+//    Run *runPastObject = _historyRecords[0];
+//    NSLog(@"Duration: %f", _historyRecords[0].duration.floatValue);
+//    NSLog(@"Distance: %f", _historyRecords[0].distance.floatValue);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,27 +38,57 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    _historyRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    
+    NSLog(@"Record size: %lu", (unsigned long)_historyRecords.count);
+    Run *runPastObject = _historyRecords[0];
+    NSLog(@"Duration: %f", _historyRecords[0].duration.floatValue);
+    NSLog(@"Distance: %f", _historyRecords[0].distance.floatValue);
+    [self.tableView reloadData];
+}
+
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return _historyRecords.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSDateFormatter *dfomatter = [[NSDateFormatter alloc] init];
+    [dfomatter setDateStyle:NSDateFormatterShortStyle];
+    
+    Run *runPastObject = [_historyRecords objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Duration: %0.2f",  runPastObject.duration.floatValue];
+
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %0.2f", runPastObject.distance.floatValue];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -86,14 +124,18 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier]isEqualToString:@"detailSegue"]) {
+        HistoryDetailsViewController *hdvc = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        currentRunObject = [_historyRecords objectAtIndex:indexPath.row];
+        hdvc.currentRunDetails = currentRunObject;
+    }
 }
-*/
+
 
 @end

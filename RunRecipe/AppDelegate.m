@@ -22,6 +22,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
+    
+    UINavigationController *nc = (UINavigationController *)[[tbc viewControllers]objectAtIndex:1];
+    
+    UINavigationController *rh = (UINavigationController *)[[tbc viewControllers]objectAtIndex:0];
+    
+    StartRunViewController *stvc = (StartRunViewController *)nc.topViewController;
+    
+    
+    HistoryTableViewController *htc = (HistoryTableViewController *)rh.topViewController;
+    
+    stvc.managedObjectContext = self.managedObjectContext;
+    htc.managedObjectContext = self.managedObjectContext;
+    
     self.window.backgroundColor = [UIColor redColor];
     
     [Fabric with:@[[Twitter class]]];
@@ -30,6 +44,10 @@
     if (session == nil) {
         [self showLoginScreen:NO];
     }
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSLog(@"%@",[paths objectAtIndex:0]);
+
     return YES;
 }
 

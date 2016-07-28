@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1460FF0C1D48F6DE00748820 /* Run+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF011D48F6DE00748820 /* Run+CoreDataProperties.m */; };
+		1460FF0D1D48F6DE00748820 /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF031D48F6DE00748820 /* Run.m */; };
+		1460FF0E1D48F6DE00748820 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF051D48F6DE00748820 /* User+CoreDataProperties.m */; };
+		1460FF0F1D48F6DE00748820 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF071D48F6DE00748820 /* User.m */; };
+		1460FF101D48F6DE00748820 /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF091D48F6DE00748820 /* Location+CoreDataProperties.m */; };
+		1460FF111D48F6DE00748820 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF0B1D48F6DE00748820 /* Location.m */; };
+		1460FF141D48FB7900748820 /* StartRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF131D48FB7900748820 /* StartRunViewController.m */; };
+		1460FF161D48FCFC00748820 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1460FF151D48FCFC00748820 /* MapKit.framework */; };
+		1460FF191D4A520000748820 /* HistoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF181D4A520000748820 /* HistoryDetailsViewController.m */; };
 		14FEFFAE1D414C1600F499AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEFFAD1D414C1600F499AC /* main.m */; };
 		14FEFFB11D414C1600F499AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEFFB01D414C1600F499AC /* AppDelegate.m */; };
 		14FEFFB71D414C1600F499AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FEFFB51D414C1600F499AC /* Main.storyboard */; };
@@ -22,7 +31,6 @@
 		FB9E91851D41C6A500BF9B7F /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91841D41C6A500BF9B7F /* LogInViewController.m */; };
 		FB9E91881D42BA2900BF9B7F /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91871D42BA2900BF9B7F /* LogOutViewController.m */; };
 		FB9E918B1D43C60C00BF9B7F /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E918A1D43C60C00BF9B7F /* TimelineViewController.m */; };
-		FB9E91901D444B3C00BF9B7F /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E918F1D444B3C00BF9B7F /* FinishViewController.m */; };
 		FB9E91941D44522600BF9B7F /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */; };
 		FB9E91971D45A37B00BF9B7F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E91961D45A37B00BF9B7F /* libsqlite3.tbd */; };
 		FB9E919C1D45A47400BF9B7F /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E919B1D45A47400BF9B7F /* DBManager.m */; };
@@ -49,6 +57,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1460FF001D48F6DE00748820 /* Run+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Run+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1460FF011D48F6DE00748820 /* Run+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Run+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1460FF021D48F6DE00748820 /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
+		1460FF031D48F6DE00748820 /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
+		1460FF041D48F6DE00748820 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1460FF051D48F6DE00748820 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1460FF061D48F6DE00748820 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		1460FF071D48F6DE00748820 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		1460FF081D48F6DE00748820 /* Location+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1460FF091D48F6DE00748820 /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1460FF0A1D48F6DE00748820 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		1460FF0B1D48F6DE00748820 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		1460FF121D48FB7900748820 /* StartRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartRunViewController.h; sourceTree = "<group>"; };
+		1460FF131D48FB7900748820 /* StartRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartRunViewController.m; sourceTree = "<group>"; };
+		1460FF151D48FCFC00748820 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1460FF171D4A520000748820 /* HistoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailsViewController.h; sourceTree = "<group>"; };
+		1460FF181D4A520000748820 /* HistoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailsViewController.m; sourceTree = "<group>"; };
 		14FEFFA91D414C1600F499AC /* RunRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FEFFAD1D414C1600F499AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14FEFFAF1D414C1600F499AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,8 +99,6 @@
 		FB9E91871D42BA2900BF9B7F /* LogOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
 		FB9E91891D43C60C00BF9B7F /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		FB9E918A1D43C60C00BF9B7F /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
-		FB9E918E1D444B3C00BF9B7F /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
-		FB9E918F1D444B3C00BF9B7F /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishViewController.m; sourceTree = "<group>"; };
 		FB9E91921D44522600BF9B7F /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
 		FB9E91951D4514C700BF9B7F /* 08723M.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; name = 08723M.mobileprovision; path = ../../../Desktop/08723/08723M.mobileprovision; sourceTree = "<group>"; };
@@ -94,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1460FF161D48FCFC00748820 /* MapKit.framework in Frameworks */,
 				FB9E919E1D47B40200BF9B7F /* CoreData.framework in Frameworks */,
 				FB9E91971D45A37B00BF9B7F /* libsqlite3.tbd in Frameworks */,
 				FB9E917E1D41B88D00BF9B7F /* Fabric.framework in Frameworks */,
@@ -123,6 +147,7 @@
 		14FEFFA01D414C1600F499AC = {
 			isa = PBXGroup;
 			children = (
+				1460FF151D48FCFC00748820 /* MapKit.framework */,
 				FB9E91961D45A37B00BF9B7F /* libsqlite3.tbd */,
 				FB9E91951D4514C700BF9B7F /* 08723M.mobileprovision */,
 				14FEFFAB1D414C1600F499AC /* RunRecipe */,
@@ -194,6 +219,18 @@
 			isa = PBXGroup;
 			children = (
 				14FEFFB81D414C1600F499AC /* RunRecipe.xcdatamodeld */,
+				1460FF001D48F6DE00748820 /* Run+CoreDataProperties.h */,
+				1460FF011D48F6DE00748820 /* Run+CoreDataProperties.m */,
+				1460FF021D48F6DE00748820 /* Run.h */,
+				1460FF031D48F6DE00748820 /* Run.m */,
+				1460FF041D48F6DE00748820 /* User+CoreDataProperties.h */,
+				1460FF051D48F6DE00748820 /* User+CoreDataProperties.m */,
+				1460FF061D48F6DE00748820 /* User.h */,
+				1460FF071D48F6DE00748820 /* User.m */,
+				1460FF081D48F6DE00748820 /* Location+CoreDataProperties.h */,
+				1460FF091D48F6DE00748820 /* Location+CoreDataProperties.m */,
+				1460FF0A1D48F6DE00748820 /* Location.h */,
+				1460FF0B1D48F6DE00748820 /* Location.m */,
 				FB9E919A1D45A47400BF9B7F /* DBManager.h */,
 				FB9E919B1D45A47400BF9B7F /* DBManager.m */,
 			);
@@ -211,6 +248,8 @@
 		FB9E91741D41634600BF9B7F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1460FF121D48FB7900748820 /* StartRunViewController.h */,
+				1460FF131D48FB7900748820 /* StartRunViewController.m */,
 				FB9E91AB1D47F32300BF9B7F /* Constants.h */,
 				FB9E91831D41C6A500BF9B7F /* LogInViewController.h */,
 				FB9E91841D41C6A500BF9B7F /* LogInViewController.m */,
@@ -218,12 +257,12 @@
 				FB9E91871D42BA2900BF9B7F /* LogOutViewController.m */,
 				FB9E91891D43C60C00BF9B7F /* TimelineViewController.h */,
 				FB9E918A1D43C60C00BF9B7F /* TimelineViewController.m */,
-				FB9E918E1D444B3C00BF9B7F /* FinishViewController.h */,
-				FB9E918F1D444B3C00BF9B7F /* FinishViewController.m */,
 				FB9E91921D44522600BF9B7F /* HistoryTableViewController.h */,
 				FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */,
 				FB9E91A41D47EA7900BF9B7F /* SummaryViewController.h */,
 				FB9E91A51D47EA7900BF9B7F /* SummaryViewController.m */,
+				1460FF171D4A520000748820 /* HistoryDetailsViewController.h */,
+				1460FF181D4A520000748820 /* HistoryDetailsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -378,13 +417,20 @@
 			files = (
 				FB9E91941D44522600BF9B7F /* HistoryTableViewController.m in Sources */,
 				FB9E91881D42BA2900BF9B7F /* LogOutViewController.m in Sources */,
-				FB9E91901D444B3C00BF9B7F /* FinishViewController.m in Sources */,
 				FB9E91A61D47EA7900BF9B7F /* SummaryViewController.m in Sources */,
 				FB9E919C1D45A47400BF9B7F /* DBManager.m in Sources */,
+				1460FF0E1D48F6DE00748820 /* User+CoreDataProperties.m in Sources */,
 				FB9E918B1D43C60C00BF9B7F /* TimelineViewController.m in Sources */,
+				1460FF191D4A520000748820 /* HistoryDetailsViewController.m in Sources */,
 				14FEFFB11D414C1600F499AC /* AppDelegate.m in Sources */,
+				1460FF0F1D48F6DE00748820 /* User.m in Sources */,
 				FB9E91851D41C6A500BF9B7F /* LogInViewController.m in Sources */,
+				1460FF0C1D48F6DE00748820 /* Run+CoreDataProperties.m in Sources */,
+				1460FF0D1D48F6DE00748820 /* Run.m in Sources */,
+				1460FF101D48F6DE00748820 /* Location+CoreDataProperties.m in Sources */,
 				14FEFFAE1D414C1600F499AC /* main.m in Sources */,
+				1460FF111D48F6DE00748820 /* Location.m in Sources */,
+				1460FF141D48FB7900748820 /* StartRunViewController.m in Sources */,
 				14FEFFBA1D414C1600F499AC /* RunRecipe.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -542,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "StartRunViewController.h"
+#import "HistoryTableViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
