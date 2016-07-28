@@ -33,7 +33,20 @@
     _distLabel.text = @"0.00";
     _paceLabel.text = @"0.00";
     _durLabel.text = @"0.00";
+    
+
+    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext: _managedObjectContext];
+    TWTRSession *session = [[[Twitter sharedInstance]sessionStore]session];
+    
+    user.name = [session userName];
+    user.userid = @([[session userID] intValue]);
+    
+    NSError *error = nil;
+    NSManagedObjectContext *context = _managedObjectContext;
+    if (![context save:&error]) {
+        NSLog(@"Error: %@", error);
     }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

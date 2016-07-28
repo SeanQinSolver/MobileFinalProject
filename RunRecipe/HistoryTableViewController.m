@@ -53,10 +53,10 @@
     _historyRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
     
-    NSLog(@"Record size: %lu", (unsigned long)_historyRecords.count);
-    Run *runPastObject = _historyRecords[0];
-    NSLog(@"Duration: %f", _historyRecords[0].duration.floatValue);
-    NSLog(@"Distance: %f", _historyRecords[0].distance.floatValue);
+//    NSLog(@"Record size: %lu", (unsigned long)_historyRecords.count);
+//    Run *runPastObject = _historyRecords[0];
+//    NSLog(@"Duration: %f", _historyRecords[0].duration.floatValue);
+//    NSLog(@"Distance: %f", _historyRecords[0].distance.floatValue);
     [self.tableView reloadData];
 }
 
@@ -71,6 +71,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
+    if (_historyRecords.count == 0) {
+        return 0;
+    }
     return _historyRecords.count;
 }
 

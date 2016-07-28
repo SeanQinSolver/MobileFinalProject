@@ -121,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVA-G6-6pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="1367"/>
+            <point key="canvasLocation" x="126" y="1399"/>
         </scene>
         <!--History Table View Controller-->
         <scene sceneID="JtC-F7-wV1">
@@ -238,12 +238,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0Y-yu-eVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2559" y="83"/>
+            <point key="canvasLocation" x="2723" y="83"/>
         </scene>
         <!--Real-Time Map-->
         <scene sceneID="OOj-1V-u2z">
             <objects>
-                <viewController storyboardIdentifier="mainView" id="M2z-EU-x96" customClass="StartRunViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartRunViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M2z-EU-x96" customClass="StartRunViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hyv-lg-quf"/>
                         <viewControllerLayoutGuide type="bottom" id="pzS-i6-HiN"/>
@@ -377,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GY-JY-Zt3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2635" y="953"/>
+            <point key="canvasLocation" x="2419" y="1025"/>
         </scene>
         <!--Run-->
         <scene sceneID="Cqv-1l-D8V">
@@ -394,7 +394,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7Z-Zw-W6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1810" y="920"/>
+            <point key="canvasLocation" x="1750" y="1020"/>
         </scene>
         <!--Summary-->
         <scene sceneID="1La-lI-daQ">
@@ -518,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iv6-yZ-7h3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="1552"/>
+            <point key="canvasLocation" x="828" y="1412"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="H6q-Ir-NWY">
@@ -529,18 +529,18 @@
                         <viewControllerLayoutGuide type="bottom" id="7rT-h7-UGn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FwH-CV-MiY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="running" translatesAutoresizingMaskIntoConstraints="NO" id="Uc7-YI-yc9">
-                                <rect key="frame" x="250" y="67" width="100" height="100"/>
+                                <rect key="frame" x="157" y="67" width="100" height="236"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="NAR-SB-31J"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RunRecipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7p-w5-rMu">
-                                <rect key="frame" x="168" y="112" width="265" height="148"/>
+                                <rect key="frame" x="75" y="112" width="265" height="284"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="265" id="bqv-LE-u12"/>
                                 </constraints>
@@ -559,10 +559,11 @@
                             <constraint firstItem="Uc7-YI-yc9" firstAttribute="top" secondItem="fZZ-P3-sXG" secondAttribute="bottom" constant="47" id="e6p-bJ-cAi"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kzi-LO-BwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-301.875" y="5.28169014084507"/>
+            <point key="canvasLocation" x="-320" y="243"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8m4-ew-moB">

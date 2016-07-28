@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
+#import "StartRunViewController.h"
 
 @interface LogInViewController : UIViewController
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+
 
 @end

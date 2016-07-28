@@ -12,9 +12,13 @@
 #import "Location.h"
 #import <CoreLocation/CoreLocation.h>
 #import <TwitterKit/TwitterKit.h>
+#import "User.h"
 
 
 @interface StartRunViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
+
+@property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) NSString *userId;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *distLabel;

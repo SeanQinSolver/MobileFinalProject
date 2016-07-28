@@ -8,6 +8,7 @@
 
 #import "LogInViewController.h"
 #import <TwitterKit/TwitterKit.h>
+#import "StartRunViewController.h"
 
 @interface LogInViewController ()
 
@@ -34,6 +35,7 @@
             // with your app's user model
             NSString *message = [NSString stringWithFormat:@"@%@ logged in! (%@)",
                                  [session userName], [session userID]];
+            
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Logged in!"
                                                             message:message
                                                            delegate:nil
@@ -51,6 +53,8 @@
     [self.view addSubview:logInButton];
 
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

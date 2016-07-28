@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
-#import "LogInViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -25,12 +25,10 @@
     UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
     
     UINavigationController *nc = (UINavigationController *)[[tbc viewControllers]objectAtIndex:1];
-    
     UINavigationController *rh = (UINavigationController *)[[tbc viewControllers]objectAtIndex:0];
     
+    
     StartRunViewController *stvc = (StartRunViewController *)nc.topViewController;
-    
-    
     HistoryTableViewController *htc = (HistoryTableViewController *)rh.topViewController;
     
     stvc.managedObjectContext = self.managedObjectContext;

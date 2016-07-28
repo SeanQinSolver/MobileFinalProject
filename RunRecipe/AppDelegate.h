@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 #import "StartRunViewController.h"
 #import "HistoryTableViewController.h"
+#import "LogInViewController.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
