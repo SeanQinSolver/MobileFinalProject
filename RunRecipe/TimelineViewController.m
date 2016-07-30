@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
+    [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
     self.title = @"Running Recipe";
     
     // Do any additional setup after loading the view.
@@ -24,10 +24,10 @@
     self.dataSource = [[TWTRUserTimelineDataSource alloc] initWithScreenName:@"runnersworld" APIClient:client];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
-
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
+//
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -36,10 +36,10 @@
 
 //Change color of cell
 -(void)tableView:(UITableView *)tableView willDisplayCell:(TWTRTweetTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    //cell.backgroundColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1];
     cell.tweetView.backgroundColor = [UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1];
     
-
+    
     // Do what you want with your 'tweetView' object
 }
 

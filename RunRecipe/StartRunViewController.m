@@ -7,6 +7,7 @@
 //
 
 #import "StartRunViewController.h"
+#import "MathController.h"
 
 @interface StartRunViewController () {
     int timeCount;
@@ -22,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
+    
     NSLog(@"Enter run");
     _mapView.delegate = self;
     _startBtn.enabled = TRUE;
@@ -94,7 +97,7 @@
 
 -(void)count {
     timeCount++;
-    NSLog(@"time is : %d" , timeCount);
+    //NSLog(@"time is : %d" , timeCount);
     [self refresh];
     [self updateProgressImageView];
 }
@@ -121,11 +124,15 @@
 
 
 -(void)refresh {
-    _durLabel.text = [NSString stringWithFormat:@"%d", timeCount];;
-    _distLabel.text = [NSString stringWithFormat:@"%.2f", dist];
-    float pace = dist / timeCount;
-    _paceLabel.text = [NSString stringWithFormat:@"%.2f", pace];
-    NSLog(@"dist label: %f", dist);
+//    _durLabel.text = [NSString stringWithFormat:@"%d", timeCount];;
+//    _distLabel.text = [NSString stringWithFormat:@"%.2f", dist];
+//    float pace = dist / timeCount;
+//    _paceLabel.text = [NSString stringWithFormat:@"%.2f", pace];
+    //NSLog(@"dist label: %f", dist);
+    
+    self.durLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:timeCount usingLongFormat:NO]];
+    self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:dist]];
+    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:dist overTime:timeCount]];
 }
 
 
@@ -189,8 +196,8 @@
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolyline *polyLine = (MKPolyline *)overlay;
         MKPolylineRenderer *render = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
-        render.strokeColor = [UIColor blueColor];
-        render.lineWidth = 3;
+        render.strokeColor = [UIColor purpleColor];
+        render.lineWidth = 5;
         //[overlayArray addObject:render];
         return render;
     }
@@ -208,6 +215,8 @@
     [_locManager stopUpdatingLocation];
     [self saveRunObject];
     [_locationRecords removeAllObjects];
+    [self performSegueWithIdentifier:@"newRunDetail" sender:nil];
+
     
 }
 
@@ -269,5 +278,12 @@
         }
     }];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+        int count = self.currentRun.locations.count;
+        NSLog(@"****Count location Number:%d",count);
+        [[segue destinationViewController] setRun:self.currentRun];
 }
 @end

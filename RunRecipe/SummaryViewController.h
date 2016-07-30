@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <OAUthiOS/OAuthiOS.h>
+#import "PNChart.h"
+#import "Run.h"
+#import "AppDelegate.h"
 
-
-@interface SummaryViewController : UIViewController<OAuthIODelegate>
+@interface SummaryViewController : UIViewController<OAuthIODelegate, PNChartDelegate>
 //{
 //    IBOutlet UILabel *lblName;
 //    IBOutlet UILabel *lblDistance;
@@ -25,7 +27,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblSteps;
 @property (weak, nonatomic) IBOutlet UILabel *lblCal;
 @property (weak, nonatomic) IBOutlet UILabel *lblHeartRate;
+@property (nonatomic) PNLineChart * lineChart;
+
 
 - (IBAction)btnLogin:(id)sender;
+
+@property (strong, nonatomic) NSArray<Run *> *historyRecords;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

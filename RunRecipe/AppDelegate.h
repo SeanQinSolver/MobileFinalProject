@@ -11,8 +11,8 @@
 #import "StartRunViewController.h"
 #import "HistoryTableViewController.h"
 #import "LogInViewController.h"
-
-
+#import "DetailRunViewController.h"
+#import "SummaryViewController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

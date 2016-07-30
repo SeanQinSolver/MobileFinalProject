@@ -22,18 +22,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
+
     
-    UINavigationController *nc = (UINavigationController *)[[tbc viewControllers]objectAtIndex:1];
+    UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
+//    for (id vc in tbc.viewControllers) {
+//        [vc setManagedObjectContext:self.managedObjectContext];
+//    }
+    
     UINavigationController *rh = (UINavigationController *)[[tbc viewControllers]objectAtIndex:0];
+    UINavigationController *nc = (UINavigationController *)[[tbc viewControllers]objectAtIndex:1];
+    
     
     
     StartRunViewController *stvc = (StartRunViewController *)nc.topViewController;
     HistoryTableViewController *htc = (HistoryTableViewController *)rh.topViewController;
+    DetailRunViewController *drc = (DetailRunViewController *)nc.visibleViewController;
     
     stvc.managedObjectContext = self.managedObjectContext;
     htc.managedObjectContext = self.managedObjectContext;
-    
+    //drc.managedObjectContext = self.managedObjectContext;
     self.window.backgroundColor = [UIColor redColor];
     
     [Fabric with:@[[Twitter class]]];

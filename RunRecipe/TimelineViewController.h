@@ -10,5 +10,6 @@
 #import <TwitterKit/TwitterKit.h>
 
 @interface TimelineViewController : TWTRTimelineViewController
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

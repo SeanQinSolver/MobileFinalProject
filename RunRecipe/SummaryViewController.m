@@ -8,8 +8,12 @@
 
 #import "SummaryViewController.h"
 #import "Constants.h"
+#import "MathController.h"
 
-@interface SummaryViewController ()
+@interface SummaryViewController () {
+    NSMutableArray *disArray;
+    NSMutableArray *dateArray;
+}
 
 @end
 
@@ -161,6 +165,143 @@
     // Do any additional setup after loading the view.
     
     [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
+    
+    
+
+    
+    
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    //Clear the view for refreshing
+    [_lineChart removeFromSuperview];
+    
+    disArray = [[NSMutableArray alloc] init];
+    dateArray = [[NSMutableArray alloc] init];
+    
+    
+    //Pass context
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    _managedObjectContext = [appDelegate managedObjectContext];
+    
+    //Get History Run
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    _historyRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    //Get distance array
+    int arraysize = (int)_historyRecords.count;
+    NSLog(@"Record size: %d", arraysize);
+    for (int i= arraysize - 1, j = 0; i >= 0 ; i--, j++) {
+        NSString *dis = [MathController stringifyDistance:_historyRecords[i].distance.floatValue];
+        disArray[j] = dis;
+        //NSLog(@"dis tanc e: %@",disArray[j]);
+    }
+    
+    //Get date array
+    for (int i= arraysize - 1, j = 0; i >= 0 ; i--, j++) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM dd"];
+        [formatter stringFromDate:_historyRecords[i].timestamp];
+        NSString *date = [formatter stringFromDate:_historyRecords[i].timestamp];
+        dateArray[j] = date;
+        NSLog(@"Time DaTe: %@",dateArray[j]);
+    }
+    //  Run *runPastObject = _historyRecords[0];
+    //   NSLog(@"Duration: %f", _historyRecords[0].duration.floatValue);
+    //    NSLog(@"Distance: %f", _historyRecords[0].distance.floatValue);
+    
+    
+    
+    self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 135.0, SCREEN_WIDTH, 200.0)];
+    self.lineChart.yLabelFormat = @"%1.1f";
+    self.lineChart.backgroundColor = [UIColor clearColor];
+    [self.lineChart setXLabels:dateArray];
+    self.lineChart.showCoordinateAxis = YES;
+    
+    // added an examle to show how yGridLines can be enabled
+    // the color is set to clearColor so that the demo remains the same
+    self.lineChart.yGridLinesColor = [UIColor clearColor];
+    self.lineChart.showYGridLines = YES;
+    
+    //Use yFixedValueMax and yFixedValueMin to Fix the Max and Min Y Value
+    //Only if you needed
+    self.lineChart.yFixedValueMax = 1.0;
+    self.lineChart.yFixedValueMin = 0.0;
+    
+    [self.lineChart setYLabels:@[
+                                 @"0 mi",
+                                 @"0.25 mi",
+                                 @"0.5 mi",
+                                 @"0.75 mi",
+                                 @"1 mi",
+                                 ]
+     ];
+    
+    // Line Chart #1
+    NSArray * data01Array = disArray;
+//    if (_historyRecords.count == 0) {
+//        data01Array = @[];
+//    } else {
+//        data01Array = disArray;
+//    }
+    PNLineChartData *data01 = [PNLineChartData new];
+    data01.dataTitle = @"Runner";
+    data01.color = PNFreshGreen;
+    data01.alpha = 0.3f;
+    data01.itemCount = data01Array.count;
+    data01.inflexionPointColor = PNRed;
+    data01.inflexionPointStyle = PNLineChartPointStyleTriangle;
+    data01.getData = ^(NSUInteger index) {
+        CGFloat yValue = [data01Array[index] floatValue];
+        return [PNLineChartDataItem dataItemWithY:yValue];
+    };
+    
+    // Line Chart #2
+//    NSArray * data02Array = @[@0.0, @180.1, @26.4, @202.2, @126.2, @167.2, @276.2];
+//    PNLineChartData *data02 = [PNLineChartData new];
+//    data02.dataTitle = @"Beta";
+//    data02.color = PNTwitterColor;
+//    data02.alpha = 0.5f;
+//    data02.itemCount = data02Array.count;
+//    data02.inflexionPointStyle = PNLineChartPointStyleCircle;
+//    data02.getData = ^(NSUInteger index) {
+//        CGFloat yValue = [data02Array[index] floatValue];
+//        return [PNLineChartDataItem dataItemWithY:yValue];
+//    };
+    
+    //self.lineChart.chartData = @[data01, data02];
+    self.lineChart.chartData = @[data01];
+    [self.lineChart strokeChart];
+    self.lineChart.delegate = self;
+    
+    
+    [self.view addSubview:self.lineChart];
+    
+    self.lineChart.legendStyle = PNLegendItemStyleStacked;
+    self.lineChart.legendFont = [UIFont boldSystemFontOfSize:12.0f];
+    self.lineChart.legendFontColor = [UIColor redColor];
+    
+    UIView *legend = [self.lineChart getLegendWithMaxWidth:320];
+    [legend setFrame:CGRectMake(30, 340, legend.frame.size.width, legend.frame.size.width)];
+    [self.view addSubview:legend];
+
+}
+
+- (void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex pointIndex:(NSInteger)pointIndex{
+    NSLog(@"Click Key on line %f, %f line index is %d and point index is %d",point.x, point.y,(int)lineIndex, (int)pointIndex);
+}
+
+- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex{
+    NSLog(@"Click on line %f, %f, line index is %d",point.x, point.y, (int)lineIndex);
 }
 
 - (void)didReceiveMemoryWarning {

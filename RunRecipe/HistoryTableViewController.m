@@ -7,6 +7,7 @@
 //
 
 #import "HistoryTableViewController.h"
+#import "DetailRunViewController.h"
 
 @interface HistoryTableViewController () {
     Run *currentRunObject;
@@ -19,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Running History";
-
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -56,7 +58,7 @@
 //    NSLog(@"Record size: %lu", (unsigned long)_historyRecords.count);
 //    Run *runPastObject = _historyRecords[0];
 //    NSLog(@"Duration: %f", _historyRecords[0].duration.floatValue);
-//    NSLog(@"Distance: %f", _historyRecords[0].distance.floatValue);
+//    NSLog(@"INit TIme Stamp: %f", _historyRecords[0].timestamp);
     [self.tableView reloadData];
 }
 
@@ -78,17 +80,26 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell" forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1];
     
     NSDateFormatter *dfomatter = [[NSDateFormatter alloc] init];
     [dfomatter setDateStyle:NSDateFormatterShortStyle];
     
     Run *runPastObject = [_historyRecords objectAtIndex:indexPath.row];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    //cell.textLabel.text = [NSString stringWithFormat:@"Duration: %0.2f",  runPastObject.duration.floatValue];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Duration: %0.2f",  runPastObject.duration.floatValue];
+    //NSLog(@"TIme STAMP: %@",[formatter stringFromDate:runPastObject.timestamp]);
+    cell.detailTextLabel.text =[formatter stringFromDate:runPastObject.timestamp];
+    
+    //cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %0.2f", runPastObject.distance.floatValue];
+    
+    cell.textLabel.text = [MathController stringifyDistance:runPastObject.distance.floatValue];
 
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %0.2f", runPastObject.distance.floatValue];
-    
     return cell;
 }
 
@@ -132,12 +143,19 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier]isEqualToString:@"detailSegue"]) {
-        HistoryDetailsViewController *hdvc = [segue destinationViewController];
+//    if ([[segue identifier]isEqualToString:@"detailSegue"]) {
+//        HistoryDetailsViewController *hdvc = [segue destinationViewController];
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        currentRunObject = [_historyRecords objectAtIndex:indexPath.row];
+//        hdvc.currentRunDetails = currentRunObject;
+//    }
+    
+    if ([[segue destinationViewController] isKindOfClass:[DetailRunViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        currentRunObject = [_historyRecords objectAtIndex:indexPath.row];
-        hdvc.currentRunDetails = currentRunObject;
+        currentRunObject = [self.historyRecords objectAtIndex:indexPath.row];
+        [(DetailRunViewController *)[segue destinationViewController] setRun:currentRunObject];
     }
+    
 }
 
 

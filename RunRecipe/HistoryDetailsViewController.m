@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
     
     _duraLabel.text = [NSString stringWithFormat:@"%d", _currentRunDetails.duration.intValue];
     _distLabel.text = [NSString stringWithFormat:@"%.2f", _currentRunDetails.distance.floatValue];
