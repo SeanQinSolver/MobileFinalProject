@@ -29,8 +29,9 @@
 //        [vc setManagedObjectContext:self.managedObjectContext];
 //    }
     
-    UINavigationController *rh = (UINavigationController *)[[tbc viewControllers]objectAtIndex:0];
-    UINavigationController *nc = (UINavigationController *)[[tbc viewControllers]objectAtIndex:1];
+    UINavigationController *nc = (UINavigationController *)[[tbc viewControllers]objectAtIndex:0];
+    UINavigationController *rh = (UINavigationController *)[[tbc viewControllers]objectAtIndex:1];
+
     
     
     

@@ -25,12 +25,12 @@
 		14FEFFB11D414C1600F499AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEFFB01D414C1600F499AC /* AppDelegate.m */; };
 		14FEFFB71D414C1600F499AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FEFFB51D414C1600F499AC /* Main.storyboard */; };
 		14FEFFBA1D414C1600F499AC /* RunRecipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14FEFFB81D414C1600F499AC /* RunRecipe.xcdatamodeld */; };
-		14FEFFBC1D414C1600F499AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FEFFBB1D414C1600F499AC /* Assets.xcassets */; };
 		14FEFFBF1D414C1600F499AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FEFFBD1D414C1600F499AC /* LaunchScreen.storyboard */; };
 		14FEFFCA1D414C1600F499AC /* RunRecipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEFFC91D414C1600F499AC /* RunRecipeTests.m */; };
 		14FEFFD51D414C1600F499AC /* RunRecipeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEFFD41D414C1600F499AC /* RunRecipeUITests.m */; };
 		52149C8CE0C03B36C46F8B1E /* libPods-RunRecipe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4574F7095B0460FC5724A863 /* libPods-RunRecipe.a */; };
 		BFB204423685A619B8C59DAD /* libPods-RunRecipeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FEEBABB7434ABB0714729 /* libPods-RunRecipeTests.a */; };
+		FB6EC6611D4EA4CC0098389F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB6EC6601D4EA4CC0098389F /* Assets.xcassets */; };
 		FB9E917E1D41B88D00BF9B7F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E917A1D41B88D00BF9B7F /* Fabric.framework */; };
 		FB9E917F1D41B88D00BF9B7F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E917B1D41B88D00BF9B7F /* TwitterKit.framework */; };
 		FB9E91801D41B88D00BF9B7F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB9E917C1D41B88D00BF9B7F /* TwitterKitResources.bundle */; };
@@ -94,7 +94,6 @@
 		14FEFFB01D414C1600F499AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		14FEFFB61D414C1600F499AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14FEFFB91D414C1600F499AC /* RunRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunRecipe.xcdatamodel; sourceTree = "<group>"; };
-		14FEFFBB1D414C1600F499AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14FEFFBE1D414C1600F499AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14FEFFC01D414C1600F499AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14FEFFC51D414C1600F499AC /* RunRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +111,7 @@
 		C7B8E62C1ED126DE357C0EBF /* libPods-RunRecipeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RunRecipeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD3B07B0E99596C3BF53606 /* Pods-RunRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunRecipe/Pods-RunRecipe.debug.xcconfig"; sourceTree = "<group>"; };
 		D1B0A8E9D3CA613EF27BEC35 /* Pods-RunRecipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunRecipeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RunRecipeTests/Pods-RunRecipeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB6EC6601D4EA4CC0098389F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB9E917A1D41B88D00BF9B7F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		FB9E917B1D41B88D00BF9B7F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
 		FB9E917C1D41B88D00BF9B7F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
@@ -213,7 +213,6 @@
 				FB9E91741D41634600BF9B7F /* Controller */,
 				FB9E91731D41634100BF9B7F /* View */,
 				FB9E91721D41633A00BF9B7F /* Model */,
-				14FEFFBB1D414C1600F499AC /* Assets.xcassets */,
 				14FEFFBD1D414C1600F499AC /* LaunchScreen.storyboard */,
 				14FEFFC01D414C1600F499AC /* Info.plist */,
 				14FEFFAC1D414C1600F499AC /* Supporting Files */,
@@ -306,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				14FEFFB51D414C1600F499AC /* Main.storyboard */,
+				FB6EC6601D4EA4CC0098389F /* Assets.xcassets */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -452,7 +452,7 @@
 			files = (
 				FB9E91801D41B88D00BF9B7F /* TwitterKitResources.bundle in Resources */,
 				14FEFFBF1D414C1600F499AC /* LaunchScreen.storyboard in Resources */,
-				14FEFFBC1D414C1600F499AC /* Assets.xcassets in Resources */,
+				FB6EC6611D4EA4CC0098389F /* Assets.xcassets in Resources */,
 				14FEFFB71D414C1600F499AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

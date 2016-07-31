@@ -14,6 +14,7 @@
     NSMutableArray *disArray;
     NSMutableArray *dateArray;
 }
+@property (weak, nonatomic) IBOutlet UIButton *lblFitbitBtn;
 
 @end
 
@@ -95,7 +96,7 @@
          NSDictionary *summary = [dictionary objectForKey:@"summary"];
          //NSLog(@"dictionary time series: %@", summary);
          NSString *cal = [summary valueForKey:@"activityCalories"];
-         _lblCal.text = [NSString stringWithFormat:@"Active Calories burnt: %@ cals",cal];
+         _lblCal.text = [NSString stringWithFormat:@"Today Calories burnt: %@ cals",cal];
          NSLog(@"activity calorie: %@", cal);
          
          //NSLog(@"Steps for today: %@", steps);
@@ -110,7 +111,7 @@
          NSDictionary *summary = [dictionary objectForKey:@"summary"];
          //NSLog(@"dictionary time series: %@", summary);
          NSString *steps = [summary valueForKey:@"steps"];
-         _lblSteps.text = [NSString stringWithFormat:@"Total steps: %@ steps",steps];
+         _lblSteps.text = [NSString stringWithFormat:@"Today steps: %@ steps",steps];
          
          NSLog(@"Steps for today: %@", steps);
          
@@ -129,7 +130,7 @@
          //NSLog(@"The total distances dictionary: %@", totalDis);
          NSString *distance = [totalDis valueForKey:@"distance"];
          //NSLog(@"Distance for today: %@", distance);
-         _lblDistance.text = [NSString stringWithFormat:@"Total distance: %@ miles",distance];
+         _lblDistance.text = [NSString stringWithFormat:@"Today distance: %@ miles",distance];
      }];
     
     [request get:@"/1/user/-/activities/heart/date/today/1d.json" success:^(NSDictionary *output, NSString *body, NSHTTPURLResponse *httpResponse)
@@ -137,17 +138,27 @@
          NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
          NSError *error;
          NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+         
          //NSLog(@"dictionary time series: %@", dictionary);
          NSArray *activities_heart = [dictionary objectForKey:@"activities-heart"];
-         //NSLog(@"dictionary time series: %@", activities_heart);
+         NSLog(@"*****dictionary time series: %@", activities_heart);
          //NSLog(@"The first: %@", activities_heart[0]);
          NSDictionary *value = [activities_heart valueForKey:@"value"];
          //NSLog(@"Value for today: %@", value);
          NSArray *heartRate = [value valueForKey:@"restingHeartRate"];
          NSString *restRate = heartRate[0];
-         _lblHeartRate.text = [NSString stringWithFormat:@"Resting Heart rate: %@ bpm",restRate];
-         
-         //NSLog(@"HR for today: %@", heartRate);
+         NSLog(@"HR for today: %@", restRate);
+
+         if (restRate) {
+             //NSLog(@"Heart %@", restRate);
+             _lblHeartRate.text = [NSString stringWithFormat:@"Resting Heart rate: %@ bpm",restRate];
+         } else {
+             _lblHeartRate.text = [NSString stringWithFormat:@"Resting Heart rate: not sync"];
+         }
+            // _lblHeartRate.text = [NSString stringWithFormat:@"Resting Heart rate: %@ bpm",restRate];
+
+        
+                  //NSLog(@"HR for today: %@", heartRate);
          //NSLog(@"HR without brackets: %@", restRate);
          
      }];
@@ -326,5 +337,6 @@
     NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
     [options setObject:@"true" forKey:@"cache"];
     [oauthioModal showWithProvider:@"fitbit" options:options];
+    [_lblFitbitBtn setTitle: @"Click to refresh" forState: UIControlStateNormal];
 }
 @end

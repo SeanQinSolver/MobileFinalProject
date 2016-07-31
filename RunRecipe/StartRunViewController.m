@@ -140,6 +140,19 @@
     
     self.durLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:timeCount usingLongFormat:NO]];
     self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:dist]];
+    NSString *countLen = [MathController stringifyDistance:dist];
+    NSUInteger length = [countLen length];
+    NSMutableAttributedString *text =
+    [[NSMutableAttributedString alloc]
+     initWithAttributedString: _distLabel.attributedText];
+    
+    [text addAttribute:NSForegroundColorAttributeName
+                 value:[UIColor redColor]
+                 range:NSMakeRange(10, length)];
+    [text addAttribute:NSFontAttributeName
+                 value:[UIFont systemFontOfSize:25]
+                 range:NSMakeRange(10, length)];
+    [_distLabel setAttributedText: text];
     self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:dist overTime:timeCount]];
 }
 
@@ -273,27 +286,15 @@
     
     timeCount = 0;
     dist = 0;
+    _durLabel.text= @"";
+    _distLabel.text = @"";
+    _paceLabel.text = @"";
+    [_mapView removeOverlays:self.mapView.overlays];
+
     [_locationRecords removeAllObjects];
     
 }
 
-- (IBAction)shareTwtter:(id)sender {
-    
-    TWTRComposer *composer = [[TWTRComposer alloc] init];
-    
-    [composer setText:@"@RunRecipet, I did a good job today, my disntance is @"];
-    
-    // Called from a UIViewController
-    [composer showFromViewController:self completion:^(TWTRComposerResult result) {
-        if (result == TWTRComposerResultCancelled) {
-            NSLog(@"Tweet composition cancelled");
-        }
-        else {
-            NSLog(@"Sending Tweet!");
-        }
-    }];
-    
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
