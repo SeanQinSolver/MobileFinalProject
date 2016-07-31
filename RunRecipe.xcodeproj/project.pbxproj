@@ -17,6 +17,10 @@
 		1460FF141D48FB7900748820 /* StartRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF131D48FB7900748820 /* StartRunViewController.m */; };
 		1460FF161D48FCFC00748820 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1460FF151D48FCFC00748820 /* MapKit.framework */; };
 		1460FF191D4A520000748820 /* HistoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF181D4A520000748820 /* HistoryDetailsViewController.m */; };
+		14F56B3C1D4E4A140081C95B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F56B3B1D4E4A140081C95B /* CoreGraphics.framework */; };
+		14F56B3E1D4E4A1B0081C95B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F56B3D1D4E4A1B0081C95B /* QuartzCore.framework */; };
+		14F56B401D4E4A240081C95B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F56B3F1D4E4A240081C95B /* UIKit.framework */; };
+		14F56B421D4E4A310081C95B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F56B411D4E4A300081C95B /* Foundation.framework */; };
 		14FEFFAE1D414C1600F499AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEFFAD1D414C1600F499AC /* main.m */; };
 		14FEFFB11D414C1600F499AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FEFFB01D414C1600F499AC /* AppDelegate.m */; };
 		14FEFFB71D414C1600F499AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FEFFB51D414C1600F499AC /* Main.storyboard */; };
@@ -80,6 +84,10 @@
 		1460FF151D48FCFC00748820 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1460FF171D4A520000748820 /* HistoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailsViewController.h; sourceTree = "<group>"; };
 		1460FF181D4A520000748820 /* HistoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailsViewController.m; sourceTree = "<group>"; };
+		14F56B3B1D4E4A140081C95B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		14F56B3D1D4E4A1B0081C95B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		14F56B3F1D4E4A240081C95B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		14F56B411D4E4A300081C95B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14FEFFA91D414C1600F499AC /* RunRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FEFFAD1D414C1600F499AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14FEFFAF1D414C1600F499AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +146,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F56B421D4E4A310081C95B /* Foundation.framework in Frameworks */,
+				14F56B401D4E4A240081C95B /* UIKit.framework in Frameworks */,
+				14F56B3E1D4E4A1B0081C95B /* QuartzCore.framework in Frameworks */,
+				14F56B3C1D4E4A140081C95B /* CoreGraphics.framework in Frameworks */,
 				1460FF161D48FCFC00748820 /* MapKit.framework in Frameworks */,
 				FB9E919E1D47B40200BF9B7F /* CoreData.framework in Frameworks */,
 				FB9E91971D45A37B00BF9B7F /* libsqlite3.tbd in Frameworks */,
@@ -244,6 +256,10 @@
 		78802298420BD0F0404EA5FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14F56B411D4E4A300081C95B /* Foundation.framework */,
+				14F56B3F1D4E4A240081C95B /* UIKit.framework */,
+				14F56B3D1D4E4A1B0081C95B /* QuartzCore.framework */,
+				14F56B3B1D4E4A140081C95B /* CoreGraphics.framework */,
 				4574F7095B0460FC5724A863 /* libPods-RunRecipe.a */,
 				B21FEEBABB7434ABB0714729 /* libPods-RunRecipeTests.a */,
 				C7B8E62C1ED126DE357C0EBF /* libPods-RunRecipeUITests.a */,

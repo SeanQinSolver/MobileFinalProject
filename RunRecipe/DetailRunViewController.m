@@ -157,7 +157,11 @@
     
     TWTRComposer *composer = [[TWTRComposer alloc] init];
     
-    [composer setText:@"@RunRecipet, I did a good job today, my disntance is @"];
+    NSString *s1 = [MathController stringifyDistance:self.currentRun.distance.floatValue];
+    NSString *s2 = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.currentRun.distance.floatValue overTime:self.currentRun.duration.intValue]];
+    NSString *result = [[[@"RunRecipet, I did a good job today, my disntance is " stringByAppendingString:s1]stringByAppendingString:@" and my average page is "]stringByAppendingString:s2];
+    
+    [composer setText:result];
     
     // Called from a UIViewController
     [composer showFromViewController:self completion:^(TWTRComposerResult result) {

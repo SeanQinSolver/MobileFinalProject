@@ -55,6 +55,7 @@
     _historyRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
     
+    
 //    NSLog(@"Record size: %lu", (unsigned long)_historyRecords.count);
 //    Run *runPastObject = _historyRecords[0];
 //    NSLog(@"Duration: %f", _historyRecords[0].duration.floatValue);
@@ -89,6 +90,7 @@
     [dfomatter setDateStyle:NSDateFormatterShortStyle];
     
     Run *runPastObject = [_historyRecords objectAtIndex:indexPath.row];
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     //cell.textLabel.text = [NSString stringWithFormat:@"Duration: %0.2f",  runPastObject.duration.floatValue];

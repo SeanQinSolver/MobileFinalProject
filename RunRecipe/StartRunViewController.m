@@ -13,6 +13,7 @@
     int timeCount;
     float dist;
     //NSMutableArray<id<MKOverlay>> *overlayArray;
+    User *currUser;
     
 }
 
@@ -37,7 +38,7 @@
     _paceLabel.text = @"0.00";
     _durLabel.text = @"0.00";
     
-
+    /*Store user into database*/
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext: _managedObjectContext];
     TWTRSession *session = [[[Twitter sharedInstance]sessionStore]session];
     
@@ -45,9 +46,16 @@
     user.userid = @([[session userID] intValue]);
     
     NSError *error = nil;
-    NSManagedObjectContext *context = _managedObjectContext;
-    if (![context save:&error]) {
-        NSLog(@"Error: %@", error);
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    [request setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:_managedObjectContext]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", [session userName]];
+    [request setPredicate:predicate];
+    NSArray *result = [_managedObjectContext executeFetchRequest:request error:&error];
+    if (result.count == 0) {
+        NSManagedObjectContext *context = _managedObjectContext;
+        if (![context save:&error]) {
+            NSLog(@"Error: %@", error);
+        }
     }
 }
 
@@ -227,6 +235,12 @@
     runObject.duration = [NSNumber numberWithInt:timeCount];
     runObject.distance = [NSNumber numberWithFloat:dist];
     runObject.timestamp = [NSDate date];
+    
+    /*Store the user object for each run*/
+    
+    runObject.user = currUser;
+    
+    
     NSMutableArray *locationPointArray = [[NSMutableArray alloc]init];
     
     for (CLLocation *loc in _locationRecords) {
@@ -238,6 +252,7 @@
     
     runObject.locations = [NSOrderedSet orderedSetWithArray:locationPointArray];
     
+
     _currentRun = runObject;
     
     NSError *error = nil;
