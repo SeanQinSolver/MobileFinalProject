@@ -8,10 +8,10 @@
 
 #import "DetailRunViewController.h"
 #import <MapKit/MapKit.h>
-#import "MathController.h"
+#import "FormatController.h"
 #import "Run.h"
 #import "Location.h"
-#import "MultiColor.h"
+
 
 
 @interface DetailRunViewController () <MKMapViewDelegate>
@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *durLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSArray *colorSegmentArray;
 
 @end
 
@@ -30,27 +31,14 @@
 {
     if (_currentRun != run) {
         _currentRun = run;
-        //[self configureView];
     }
 }
 
-- (void)configureView
-{
-    self.distLabel.text = [MathController stringifyDistance:self.currentRun.distance.floatValue];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    self.dateLabel.text = [formatter stringFromDate:self.currentRun.timestamp];
-    
-    self.durLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:self.currentRun.duration.intValue usingLongFormat:YES]];
-    
-    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.currentRun.distance.floatValue overTime:self.currentRun.duration.intValue]];
-    
-    [self loadMap];
-}
 
 - (MKCoordinateRegion)mapRegion
 {
+    //Ref: https://www.raywenderlich.com/73984/make-app-like-runkeeper-part-1
+    //Make the map stick to the region according to the locations
     MKCoordinateRegion region;
     Location *initialLoc = self.currentRun.locations.firstObject;
     
@@ -86,25 +74,17 @@
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
 {
     //Without color change
-//    if ([overlay isKindOfClass:[MKPolyline class]]) {
-//        MKPolyline *polyLine = (MKPolyline *)overlay;
-//        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
-//        aRenderer.strokeColor = [UIColor blackColor];
-//        aRenderer.lineWidth = 3;
-//        return aRenderer;
-//    }
-//    
-//    return nil;
-    
-    if ([overlay isKindOfClass:[MultiColor class]]) {
-        MultiColor *polyLine = (MultiColor *)overlay;
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolyline *polyLine = (MKPolyline *)overlay;
         MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
-        aRenderer.strokeColor = polyLine.color;
+        aRenderer.strokeColor = [UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1];
         aRenderer.lineWidth = 5;
         return aRenderer;
     }
     
     return nil;
+    
+
     
 }
 
@@ -132,33 +112,17 @@
         [self.mapView setRegion:[self mapRegion]];
         
         // make the line(s!) on the map
-        //[self.mapView addOverlay:[self polyLine]];
-        NSArray *colorSegmentArray = [MathController colorSegmentsForLocations:self.currentRun.locations.array];
-        [self.mapView addOverlays:colorSegmentArray];
+        [self.mapView addOverlay:[self polyLine]];
         
     }
-    
-//    else {
-//        
-//        // no locations were found!
-//        self.mapView.hidden = YES;
-//        
-//        UIAlertView *alertView = [[UIAlertView alloc]
-//                                  initWithTitle:@"Error"
-//                                  message:@"Sorry, this run has no locations saved."
-//                                  delegate:nil
-//                                  cancelButtonTitle:@"OK"
-//                                  otherButtonTitles:nil];
-//        [alertView show];
-//    }
 }
 
 - (IBAction)shareTwtter:(id)sender {
     
     TWTRComposer *composer = [[TWTRComposer alloc] init];
     
-    NSString *s1 = [MathController stringifyDistance:self.currentRun.distance.floatValue];
-    NSString *s2 = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.currentRun.distance.floatValue overTime:self.currentRun.duration.intValue]];
+    NSString *s1 = [FormatController formatDistance:self.currentRun.distance.floatValue];
+    NSString *s2 = [NSString stringWithFormat:@"Pace: %@",  [FormatController formatSpeed:self.currentRun.distance.floatValue overTime:self.currentRun.duration.intValue]];
     NSString *result = [[[@"#RunRecipet, I did a good job today, my disntance is " stringByAppendingString:s1]stringByAppendingString:@" and my average page is "]stringByAppendingString:s2];
     
     [composer setText:result];
@@ -180,7 +144,20 @@
     
     // Do any additional setup after loading the view.
     [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
-    [self configureView];
+    
+    
+    //Get the current run view
+    self.distLabel.text = [FormatController formatDistance:self.currentRun.distance.floatValue];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    self.dateLabel.text = [formatter stringFromDate:self.currentRun.timestamp];
+    
+    self.durLabel.text = [NSString stringWithFormat:@"Time: %@",  [FormatController formatDuration:self.currentRun.duration.intValue usingLongFormat:YES]];
+    
+    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [FormatController formatSpeed:self.currentRun.distance.floatValue overTime:self.currentRun.duration.intValue]];
+    
+    [self loadMap];
 }
 
 - (void)didReceiveMemoryWarning {

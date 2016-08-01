@@ -1,13 +1,12 @@
 //
 //  StartRunViewController.m
 //  RunRecipe
-//
 //  Created by QinShawn on 7/27/16.
 //  Copyright © 2016 Team1. All rights reserved.
 //
 
 #import "StartRunViewController.h"
-#import "MathController.h"
+#import "FormatController.h"
 
 @interface StartRunViewController () {
     int timeCount;
@@ -34,9 +33,9 @@
     _distLabel.hidden = YES;
     _paceLabel.hidden = YES;
     _durLabel.hidden = YES;
-    _distLabel.text = @"0.00";
-    _paceLabel.text = @"0.00";
-    _durLabel.text = @"0.00";
+    _distLabel.text = @"";
+    _paceLabel.text = @"";
+    _durLabel.text = @"";
     
     /*Store user into database*/
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext: _managedObjectContext];
@@ -45,6 +44,7 @@
     user.name = [session userName];
     user.userid = @([[session userID] intValue]);
     
+    //Fetch data
     NSError *error = nil;
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     [request setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:_managedObjectContext]];
@@ -107,29 +107,7 @@
     timeCount++;
     //NSLog(@"time is : %d" , timeCount);
     [self refresh];
-    [self updateProgressImageView];
 }
-
-- (void)updateProgressImageView
-{
-    int currentPosition = self.progressImageView.frame.origin.x;
-    CGRect newRect = self.progressImageView.frame;
-    
-    switch (currentPosition) {
-        case 20:
-        newRect.origin.x = 80;
-        break;
-        case 80:
-        newRect.origin.x = 140;
-        break;
-        default:
-        newRect.origin.x = 20;
-        break;
-    }
-    
-    self.progressImageView.frame = newRect;
-}
-
 
 -(void)refresh {
 //    _durLabel.text = [NSString stringWithFormat:@"%d", timeCount];;
@@ -138,9 +116,11 @@
 //    _paceLabel.text = [NSString stringWithFormat:@"%.2f", pace];
     //NSLog(@"dist label: %f", dist);
     
-    self.durLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:timeCount usingLongFormat:NO]];
-    self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:dist]];
-    NSString *countLen = [MathController stringifyDistance:dist];
+    self.durLabel.text = [NSString stringWithFormat:@"Time: %@",  [FormatController formatDuration:timeCount usingLongFormat:NO]];
+    self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [FormatController formatDistance:dist]];
+    
+    //Make the number of miles red color
+    NSString *countLen = [FormatController formatDistance:dist];
     NSUInteger length = [countLen length];
     NSMutableAttributedString *text =
     [[NSMutableAttributedString alloc]
@@ -153,7 +133,9 @@
                  value:[UIFont systemFontOfSize:25]
                  range:NSMakeRange(10, length)];
     [_distLabel setAttributedText: text];
-    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:dist overTime:timeCount]];
+    
+    
+    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [FormatController formatSpeed:dist overTime:timeCount]];
 }
 
 
@@ -214,6 +196,8 @@
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
 {
+    //  Ref: https://www.raywenderlich.com/73984/make-app-like-runkeeper-part-1
+    //  learnt how to draw map
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolyline *polyLine = (MKPolyline *)overlay;
         MKPolylineRenderer *render = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
@@ -298,8 +282,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-        int count = self.currentRun.locations.count;
-        NSLog(@"****Count location Number:%d",count);
+        //int count = self.currentRun.locations.count;
+        //NSLog(@"****Count location Number:%d",count);
         [[segue destinationViewController] setRun:self.currentRun];
 }
 @end

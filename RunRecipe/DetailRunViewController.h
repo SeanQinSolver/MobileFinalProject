@@ -14,7 +14,6 @@
 @interface DetailRunViewController : UIViewController
 
 @property (strong, nonatomic) Run *currentRun;
-//@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (void)setRun:(Run *)run;
 @end

@@ -16,7 +16,6 @@
 		1460FF111D48F6DE00748820 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF0B1D48F6DE00748820 /* Location.m */; };
 		1460FF141D48FB7900748820 /* StartRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF131D48FB7900748820 /* StartRunViewController.m */; };
 		1460FF161D48FCFC00748820 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1460FF151D48FCFC00748820 /* MapKit.framework */; };
-		1460FF191D4A520000748820 /* HistoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1460FF181D4A520000748820 /* HistoryDetailsViewController.m */; };
 		14F56B3C1D4E4A140081C95B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F56B3B1D4E4A140081C95B /* CoreGraphics.framework */; };
 		14F56B3E1D4E4A1B0081C95B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F56B3D1D4E4A1B0081C95B /* QuartzCore.framework */; };
 		14F56B401D4E4A240081C95B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F56B3F1D4E4A240081C95B /* UIKit.framework */; };
@@ -39,14 +38,11 @@
 		FB9E91881D42BA2900BF9B7F /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91871D42BA2900BF9B7F /* LogOutViewController.m */; };
 		FB9E918B1D43C60C00BF9B7F /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E918A1D43C60C00BF9B7F /* TimelineViewController.m */; };
 		FB9E91941D44522600BF9B7F /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */; };
-		FB9E91971D45A37B00BF9B7F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E91961D45A37B00BF9B7F /* libsqlite3.tbd */; };
-		FB9E919C1D45A47400BF9B7F /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E919B1D45A47400BF9B7F /* DBManager.m */; };
 		FB9E919E1D47B40200BF9B7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E919D1D47B40200BF9B7F /* CoreData.framework */; };
 		FB9E91A61D47EA7900BF9B7F /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91A51D47EA7900BF9B7F /* SummaryViewController.m */; };
 		FB9E91AA1D47F29000BF9B7F /* OAuthiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E91A91D47F29000BF9B7F /* OAuthiOS.framework */; };
 		FB9E91FD1D4AEA3B00BF9B7F /* DetailRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91FC1D4AEA3B00BF9B7F /* DetailRunViewController.m */; };
-		FB9E92001D4AF19200BF9B7F /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91FF1D4AF19200BF9B7F /* MathController.m */; };
-		FB9E92061D4B13DE00BF9B7F /* MultiColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E92051D4B13DE00BF9B7F /* MultiColor.m */; };
+		FB9E92001D4AF19200BF9B7F /* FormatController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9E91FF1D4AF19200BF9B7F /* FormatController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +78,6 @@
 		1460FF121D48FB7900748820 /* StartRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartRunViewController.h; sourceTree = "<group>"; };
 		1460FF131D48FB7900748820 /* StartRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartRunViewController.m; sourceTree = "<group>"; };
 		1460FF151D48FCFC00748820 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		1460FF171D4A520000748820 /* HistoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailsViewController.h; sourceTree = "<group>"; };
-		1460FF181D4A520000748820 /* HistoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailsViewController.m; sourceTree = "<group>"; };
 		14F56B3B1D4E4A140081C95B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		14F56B3D1D4E4A1B0081C95B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		14F56B3F1D4E4A240081C95B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -125,9 +119,6 @@
 		FB9E91921D44522600BF9B7F /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
 		FB9E91951D4514C700BF9B7F /* 08723M.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; name = 08723M.mobileprovision; path = ../../../Desktop/08723/08723M.mobileprovision; sourceTree = "<group>"; };
-		FB9E91961D45A37B00BF9B7F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		FB9E919A1D45A47400BF9B7F /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
-		FB9E919B1D45A47400BF9B7F /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		FB9E919D1D47B40200BF9B7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FB9E91A41D47EA7900BF9B7F /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		FB9E91A51D47EA7900BF9B7F /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
@@ -135,10 +126,8 @@
 		FB9E91AB1D47F32300BF9B7F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FB9E91FB1D4AEA3B00BF9B7F /* DetailRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailRunViewController.h; sourceTree = "<group>"; };
 		FB9E91FC1D4AEA3B00BF9B7F /* DetailRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailRunViewController.m; sourceTree = "<group>"; };
-		FB9E91FE1D4AF19200BF9B7F /* MathController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathController.h; sourceTree = "<group>"; };
-		FB9E91FF1D4AF19200BF9B7F /* MathController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathController.m; sourceTree = "<group>"; };
-		FB9E92041D4B13DE00BF9B7F /* MultiColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiColor.h; sourceTree = "<group>"; };
-		FB9E92051D4B13DE00BF9B7F /* MultiColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiColor.m; sourceTree = "<group>"; };
+		FB9E91FE1D4AF19200BF9B7F /* FormatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatController.h; sourceTree = "<group>"; };
+		FB9E91FF1D4AF19200BF9B7F /* FormatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +141,6 @@
 				14F56B3C1D4E4A140081C95B /* CoreGraphics.framework in Frameworks */,
 				1460FF161D48FCFC00748820 /* MapKit.framework in Frameworks */,
 				FB9E919E1D47B40200BF9B7F /* CoreData.framework in Frameworks */,
-				FB9E91971D45A37B00BF9B7F /* libsqlite3.tbd in Frameworks */,
 				FB9E917E1D41B88D00BF9B7F /* Fabric.framework in Frameworks */,
 				FB9E91811D41B88D00BF9B7F /* TwitterCore.framework in Frameworks */,
 				FB9E91AA1D47F29000BF9B7F /* OAuthiOS.framework in Frameworks */,
@@ -184,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				1460FF151D48FCFC00748820 /* MapKit.framework */,
-				FB9E91961D45A37B00BF9B7F /* libsqlite3.tbd */,
 				FB9E91951D4514C700BF9B7F /* 08723M.mobileprovision */,
 				14FEFFAB1D414C1600F499AC /* RunRecipe */,
 				14FEFFC81D414C1600F499AC /* RunRecipeTests */,
@@ -295,8 +282,6 @@
 				1460FF091D48F6DE00748820 /* Location+CoreDataProperties.m */,
 				1460FF0A1D48F6DE00748820 /* Location.h */,
 				1460FF0B1D48F6DE00748820 /* Location.m */,
-				FB9E919A1D45A47400BF9B7F /* DBManager.h */,
-				FB9E919B1D45A47400BF9B7F /* DBManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -326,14 +311,10 @@
 				FB9E91931D44522600BF9B7F /* HistoryTableViewController.m */,
 				FB9E91A41D47EA7900BF9B7F /* SummaryViewController.h */,
 				FB9E91A51D47EA7900BF9B7F /* SummaryViewController.m */,
-				1460FF171D4A520000748820 /* HistoryDetailsViewController.h */,
-				1460FF181D4A520000748820 /* HistoryDetailsViewController.m */,
 				FB9E91FB1D4AEA3B00BF9B7F /* DetailRunViewController.h */,
 				FB9E91FC1D4AEA3B00BF9B7F /* DetailRunViewController.m */,
-				FB9E91FE1D4AF19200BF9B7F /* MathController.h */,
-				FB9E91FF1D4AF19200BF9B7F /* MathController.m */,
-				FB9E92041D4B13DE00BF9B7F /* MultiColor.h */,
-				FB9E92051D4B13DE00BF9B7F /* MultiColor.m */,
+				FB9E91FE1D4AF19200BF9B7F /* FormatController.h */,
+				FB9E91FF1D4AF19200BF9B7F /* FormatController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -617,22 +598,19 @@
 				FB9E91941D44522600BF9B7F /* HistoryTableViewController.m in Sources */,
 				FB9E91881D42BA2900BF9B7F /* LogOutViewController.m in Sources */,
 				FB9E91A61D47EA7900BF9B7F /* SummaryViewController.m in Sources */,
-				FB9E919C1D45A47400BF9B7F /* DBManager.m in Sources */,
 				1460FF0E1D48F6DE00748820 /* User+CoreDataProperties.m in Sources */,
 				FB9E918B1D43C60C00BF9B7F /* TimelineViewController.m in Sources */,
-				1460FF191D4A520000748820 /* HistoryDetailsViewController.m in Sources */,
 				14FEFFB11D414C1600F499AC /* AppDelegate.m in Sources */,
 				1460FF0F1D48F6DE00748820 /* User.m in Sources */,
 				FB9E91851D41C6A500BF9B7F /* LogInViewController.m in Sources */,
 				1460FF0C1D48F6DE00748820 /* Run+CoreDataProperties.m in Sources */,
 				1460FF0D1D48F6DE00748820 /* Run.m in Sources */,
 				1460FF101D48F6DE00748820 /* Location+CoreDataProperties.m in Sources */,
-				FB9E92061D4B13DE00BF9B7F /* MultiColor.m in Sources */,
 				14FEFFAE1D414C1600F499AC /* main.m in Sources */,
 				1460FF111D48F6DE00748820 /* Location.m in Sources */,
 				FB9E91FD1D4AEA3B00BF9B7F /* DetailRunViewController.m in Sources */,
 				1460FF141D48FB7900748820 /* StartRunViewController.m in Sources */,
-				FB9E92001D4AF19200BF9B7F /* MathController.m in Sources */,
+				FB9E92001D4AF19200BF9B7F /* FormatController.m in Sources */,
 				14FEFFBA1D414C1600F499AC /* RunRecipe.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

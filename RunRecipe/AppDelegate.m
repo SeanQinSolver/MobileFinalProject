@@ -37,7 +37,7 @@
     
     StartRunViewController *stvc = (StartRunViewController *)nc.topViewController;
     HistoryTableViewController *htc = (HistoryTableViewController *)rh.topViewController;
-    DetailRunViewController *drc = (DetailRunViewController *)nc.visibleViewController;
+    //DetailRunViewController *drc = (DetailRunViewController *)nc.visibleViewController;
     
     stvc.managedObjectContext = self.managedObjectContext;
     htc.managedObjectContext = self.managedObjectContext;

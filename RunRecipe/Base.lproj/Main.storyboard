@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Running Recipe-->
         <scene sceneID="0Pq-oh-8ga">
             <objects>
                 <tableViewController id="RnV-g3-IA1" customClass="TimelineViewController" sceneMemberID="viewController">
@@ -30,12 +30,12 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Recipe" image="recipe" id="phB-Mq-kdU"/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="eCS-ky-gAi"/>
+                    <navigationItem key="navigationItem" title="Running Recipe" id="eCS-ky-gAi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccs-rY-IlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-703.125" y="1320.4225352112676"/>
+            <point key="canvasLocation" x="-130" y="1386"/>
         </scene>
         <!--Recipe-->
         <scene sceneID="7Tq-XZ-tFg">
@@ -52,7 +52,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTc-dN-abo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1715.625" y="1319.3661971830984"/>
+            <point key="canvasLocation" x="-612" y="1379"/>
         </scene>
         <!--LogOut-->
         <scene sceneID="k9h-fc-Tl3">
@@ -122,9 +122,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVA-G6-6pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="1399"/>
+            <point key="canvasLocation" x="828" y="1379"/>
         </scene>
-        <!--History Table View Controller-->
+        <!--Running History-->
         <scene sceneID="JtC-F7-wV1">
             <objects>
                 <tableViewController id="Jkq-Nq-fcL" customClass="HistoryTableViewController" sceneMemberID="viewController">
@@ -168,12 +168,12 @@
                             <outlet property="delegate" destination="Jkq-Nq-fcL" id="M4B-8R-lmP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="43l-3d-TOi"/>
+                    <navigationItem key="navigationItem" title="Running History" id="AdB-cx-L7n"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNv-V0-pbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075" y="83"/>
+            <point key="canvasLocation" x="1723" y="83"/>
         </scene>
         <!--Real-Time Map-->
         <scene sceneID="OOj-1V-u2z">
@@ -216,7 +216,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNt-mO-F1n">
-                                <rect key="frame" x="37" y="539" width="80" height="60"/>
+                                <rect key="frame" x="37" y="539" width="70" height="60"/>
                                 <state key="normal" image="btnStart"/>
                                 <connections>
                                     <action selector="startRun:" destination="M2z-EU-x96" eventType="touchUpInside" id="FlL-XF-m0m"/>
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GY-JY-Zt3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2419" y="1025"/>
+            <point key="canvasLocation" x="1883" y="1015"/>
         </scene>
         <!--Detail Run View Controller-->
         <scene sceneID="fBJ-hK-5wk">
@@ -333,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hw-Yo-RpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2867" y="312"/>
+            <point key="canvasLocation" x="2493" y="83"/>
         </scene>
         <!--Run-->
         <scene sceneID="Cqv-1l-D8V">
@@ -350,7 +350,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7Z-Zw-W6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="1020"/>
+            <point key="canvasLocation" x="1344" y="1010"/>
         </scene>
         <!--Summary-->
         <scene sceneID="1La-lI-daQ">
@@ -475,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iv6-yZ-7h3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880" y="1358"/>
+            <point key="canvasLocation" x="342" y="1386"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="H6q-Ir-NWY">
@@ -520,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kzi-LO-BwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-320" y="243"/>
+            <point key="canvasLocation" x="-322" y="366"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8m4-ew-moB">
@@ -561,7 +561,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYN-4u-78R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344.375" y="83.450704225352112"/>
+            <point key="canvasLocation" x="1166" y="83"/>
         </scene>
     </scenes>
     <resources>
@@ -578,6 +578,6 @@
         <image name="summary" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q3T-ni-KO7"/>
+        <segue reference="wlL-sA-1TD"/>
     </inferredMetricsTieBreakers>
 </document>

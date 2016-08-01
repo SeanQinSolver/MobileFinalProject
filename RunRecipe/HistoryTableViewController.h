@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "StartRunViewController.h"
-#import "HistoryDetailsViewController.h"
-#import "MathController.h"
+#import "FormatController.h"
 @interface HistoryTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray<Run *> *historyRecords;

@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
-    self.title = @"Running Recipe";
+    //self.title = @"Running Recipe";
     
     // Do any additional setup after loading the view.
     TWTRAPIClient *client = [[TWTRAPIClient alloc] init];

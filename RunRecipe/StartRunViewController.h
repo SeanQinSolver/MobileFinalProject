@@ -40,7 +40,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) CLLocationManager *locManager;
 
-- (IBAction)shareTwtter:(id)sender;
 - (IBAction)startRun:(id)sender;
 - (IBAction)stopRun:(id)sender;
 - (IBAction)abortRun:(id)sender;

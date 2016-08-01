@@ -1,14 +1,14 @@
 //
 //  SummaryViewController.m
 //  RunRecipe
-//
+//  Utilize package from https://github.com/kevinzhow/PNChart to draw chart
 //  Created by Chuanyu Chen on 7/26/16.
 //  Copyright © 2016 Team1. All rights reserved.
 //
 
 #import "SummaryViewController.h"
 #import "Constants.h"
-#import "MathController.h"
+#import "FormatController.h"
 
 @interface SummaryViewController () {
     NSMutableArray *disArray;
@@ -31,6 +31,8 @@
     
     
     //https://api.fitbit.com/5/user/-/profile.json
+    
+    //Get user name
     [request get:@"/1/user/-/profile.json" success:^(NSDictionary *output, NSString *body, NSHTTPURLResponse *httpResponse)
      {
          NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
@@ -53,41 +55,9 @@
                  //image.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[user objectForKey:@"avatar"]]];
              }
          }
-         
-         
-         
      }];
     
-    //    [request get:@"/1/user/-/activities/goals/daily.json" success:^(NSDictionary *output, NSString *body, NSHTTPURLResponse *httpResponse)
-    //     {
-    //         NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
-    //         NSError *error;
-    //         NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    //         NSDictionary *goals = [dictionary objectForKey:@"goals"];
-    //         NSString *stepGoalAmount = [goals objectForKey:@"steps"];
-    //         //goalLabel.text = [NSString stringWithFormat:@"Your daily step goal: %@",stepGoalAmount];
-    //         NSLog(@"goals: %@", goals);
-    //
-    //         NSLog(@"stepgoalamt: %@", stepGoalAmount);
-    //
-    //     }];
-    
-    
-    //    [request get:@"/1/user/-/activities/steps/date/today/1d.json" success:^(NSDictionary *output, NSString *body, NSHTTPURLResponse *httpResponse)
-    //     {
-    //         NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
-    //         NSError *error;
-    //         NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    //         NSDictionary *activities = [dictionary objectForKey:@"activities-steps"];
-    //         NSLog(@"dictionary time series: %@", activities);
-    //         NSString *steps = [activities valueForKey:@"value"];
-    //         goalLabel.text = [NSString stringWithFormat:@"Your current step: %@",steps];
-    //         NSLog(@"dictionary time series: %@", activities);
-    //
-    //         NSLog(@"Steps for today: %@", steps);
-    //
-    //     }];
-    
+    //Get calorie for today
     [request get:@"/1/user/-/activities/date/today.json" success:^(NSDictionary *output, NSString *body, NSHTTPURLResponse *httpResponse)
      {
          NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
@@ -103,6 +73,7 @@
          
      }];
     
+    //Get steps for today
     [request get:@"/1/user/-/activities/date/today.json" success:^(NSDictionary *output, NSString *body, NSHTTPURLResponse *httpResponse)
      {
          NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
@@ -117,6 +88,8 @@
          
      }];
     
+    
+    //Get distances for today
     [request get:@"/1/user/-/activities/date/today.json" success:^(NSDictionary *output, NSString *body, NSHTTPURLResponse *httpResponse)
      {
          NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
@@ -133,6 +106,7 @@
          _lblDistance.text = [NSString stringWithFormat:@"Today distance: %@ miles",distance];
      }];
     
+    //Get resting heart rate for today
     [request get:@"/1/user/-/activities/heart/date/today/1d.json" success:^(NSDictionary *output, NSString *body, NSHTTPURLResponse *httpResponse)
      {
          NSData* data = [body dataUsingEncoding:NSUTF8StringEncoding];
@@ -149,16 +123,14 @@
          NSString *restRate = heartRate[0];
          NSLog(@"HR for today: %@", restRate);
 
+         //Check if Null
          if (restRate) {
              //NSLog(@"Heart %@", restRate);
              _lblHeartRate.text = [NSString stringWithFormat:@"Resting Heart rate: %@ bpm",restRate];
          } else {
              _lblHeartRate.text = [NSString stringWithFormat:@"Resting Heart rate: not sync"];
          }
-            // _lblHeartRate.text = [NSString stringWithFormat:@"Resting Heart rate: %@ bpm",restRate];
-
-        
-                  //NSLog(@"HR for today: %@", heartRate);
+         //NSLog(@"HR for today: %@", heartRate);
          //NSLog(@"HR without brackets: %@", restRate);
          
      }];
@@ -176,12 +148,6 @@
     // Do any additional setup after loading the view.
     
     [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
-    
-    
-
-    
-    
-    
     
 }
 
@@ -212,7 +178,7 @@
     int arraysize = (int)_historyRecords.count;
     NSLog(@"Record size: %d", arraysize);
     for (int i= arraysize - 1, j = 0; i >= 0 ; i--, j++) {
-        NSString *dis = [MathController stringifyDistance:_historyRecords[i].distance.floatValue];
+        NSString *dis = [FormatController formatDistance:_historyRecords[i].distance.floatValue];
         disArray[j] = dis;
         //NSLog(@"dis tanc e: %@",disArray[j]);
     }

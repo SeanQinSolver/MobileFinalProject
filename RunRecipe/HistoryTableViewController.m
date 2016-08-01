@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Running History";
+    //self.title = @"Running History";
     
     [[self view] setBackgroundColor:[UIColor colorWithRed:(255/255.0) green:(215/255.0) blue:(0/255.0) alpha:1]];
 
@@ -69,12 +69,10 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     if (_historyRecords.count == 0) {
         return 0;
     }
@@ -101,7 +99,7 @@
     
     //cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %0.2f", runPastObject.distance.floatValue];
     
-    cell.textLabel.text = [MathController stringifyDistance:runPastObject.distance.floatValue];
+    cell.textLabel.text = [FormatController formatDistance:runPastObject.distance.floatValue];
 
     return cell;
 }
@@ -146,13 +144,8 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier]isEqualToString:@"detailSegue"]) {
-//        HistoryDetailsViewController *hdvc = [segue destinationViewController];
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        currentRunObject = [_historyRecords objectAtIndex:indexPath.row];
-//        hdvc.currentRunDetails = currentRunObject;
-//    }
-    
+
+    //Pass the selected run to the detail page
     if ([[segue destinationViewController] isKindOfClass:[DetailRunViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         currentRunObject = [self.historyRecords objectAtIndex:indexPath.row];
