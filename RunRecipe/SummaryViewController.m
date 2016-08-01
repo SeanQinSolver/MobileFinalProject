@@ -67,10 +67,7 @@
          //NSLog(@"dictionary time series: %@", summary);
          NSString *cal = [summary valueForKey:@"activityCalories"];
          _lblCal.text = [NSString stringWithFormat:@"Today Calories burnt: %@ cals",cal];
-         NSLog(@"activity calorie: %@", cal);
-         
-         //NSLog(@"Steps for today: %@", steps);
-         
+         //NSLog(@"activity calorie: %@", cal);
      }];
     
     //Get steps for today
@@ -84,7 +81,7 @@
          NSString *steps = [summary valueForKey:@"steps"];
          _lblSteps.text = [NSString stringWithFormat:@"Today steps: %@ steps",steps];
          
-         NSLog(@"Steps for today: %@", steps);
+         //NSLog(@"Steps for today: %@", steps);
          
      }];
     
@@ -190,7 +187,7 @@
         [formatter stringFromDate:_historyRecords[i].timestamp];
         NSString *date = [formatter stringFromDate:_historyRecords[i].timestamp];
         dateArray[j] = date;
-        NSLog(@"Time DaTe: %@",dateArray[j]);
+        //NSLog(@"Time DaTe: %@",dateArray[j]);
     }
     //  Run *runPastObject = _historyRecords[0];
     //   NSLog(@"Duration: %f", _historyRecords[0].duration.floatValue);

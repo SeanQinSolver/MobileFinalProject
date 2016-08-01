@@ -140,7 +140,7 @@
 
 
 -(void)updateLocations {
-    NSLog(@"Start update location");
+    //NSLog(@"Start update location");
     if (_locManager == nil) {
         _locManager = [[CLLocationManager alloc]init];
     }
@@ -153,7 +153,7 @@
     if ([_locManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [_locManager requestWhenInUseAuthorization];
     }
-    NSLog(@"in to update");
+    //NSLog(@"in to update");
     [_locManager startUpdatingLocation];
     
 }
@@ -212,7 +212,7 @@
 
 //save
 - (IBAction)stopRun:(id)sender {
-    NSLog(@"saved");
+    //NSLog(@"saved");
     _startBtn.enabled = TRUE;
     _stopBtn.enabled = FALSE;
     _abortBtn.enabled = FALSE;
@@ -227,7 +227,7 @@
 
 
 -(void)saveRunObject {
-    NSLog(@"get!!");
+    //NSLog(@"get!!");
     Run *runObject = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext: self.managedObjectContext];
     runObject.duration = [NSNumber numberWithInt:timeCount];
     runObject.distance = [NSNumber numberWithFloat:dist];
@@ -255,14 +255,14 @@
     NSError *error = nil;
     NSManagedObjectContext *context = _managedObjectContext;
     if (![context save:&error]) {
-        NSLog(@"Error: %@", error);
+        //NSLog(@"Error: %@", error);
     }
 }
 
 //abort current run
 
 - (IBAction)abortRun:(id)sender {
-    NSLog(@"aborted");
+    //NSLog(@"aborted");
     _startBtn.enabled = TRUE;
     _stopBtn.enabled = FALSE;
     [_timer invalidate];

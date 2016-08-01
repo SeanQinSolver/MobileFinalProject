@@ -1,5 +1,5 @@
 //
-//  MathController.m
+//  FormatController.m
 //
 //
 //  Reference: https://www.raywenderlich.com/73984/make-app-like-runkeeper-part-1
