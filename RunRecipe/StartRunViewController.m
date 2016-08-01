@@ -1,6 +1,8 @@
 //
 //  StartRunViewController.m
 //  RunRecipe
+//Ref: https://www.raywenderlich.com/73984/make-app-like-runkeeper-part-1
+//learnt how to update the map region and draw the polyline
 //  Created by QinShawn on 7/27/16.
 //  Copyright © 2016 Team1. All rights reserved.
 //
@@ -130,7 +132,7 @@
                  value:[UIColor redColor]
                  range:NSMakeRange(10, length)];
     [text addAttribute:NSFontAttributeName
-                 value:[UIFont systemFontOfSize:25]
+                 value:[UIFont systemFontOfSize:28]
                  range:NSMakeRange(10, length)];
     [_distLabel setAttributedText: text];
     
@@ -163,7 +165,6 @@
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
    
-    
     for (CLLocation *loc in locations) {
         
         NSTimeInterval interval = [loc.timestamp timeIntervalSinceNow];
@@ -196,8 +197,6 @@
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
 {
-    //  Ref: https://www.raywenderlich.com/73984/make-app-like-runkeeper-part-1
-    //  learnt how to draw map
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolyline *polyLine = (MKPolyline *)overlay;
         MKPolylineRenderer *render = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];

@@ -2,7 +2,7 @@
 //  FormatController.m
 //
 //
-//  Reference: https://www.raywenderlich.com/73984/make-app-like-runkeeper-part-1
+//  Reference: https://github.com/mluedke2/moonrunner
 //  A controller that helps stringify data
 
 #import "FormatController.h"
